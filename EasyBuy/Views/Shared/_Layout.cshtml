@@ -5,41 +5,48 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 我的 ASP.NET 應用程式</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
+    @*
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    *@
+    @Styles.Render("~/Content/common")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("應用程式名稱", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("首頁", "Index", "Home")</li>
-                    <li>@Html.ActionLink("關於", "About", "Home")</li>
-                    <li>@Html.ActionLink("連絡人", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+    <header>
+        <div class="logo"></div>
+        <h1 class="title">@ViewBag.Title</h1>
+        <a href="#" class="menu_btn"></a>
+        <div class="menu">
+            <ul>
+                <li>首頁</li>
+                <li>熱賣商品</li>
+                <li>最新商品</li>
+                <li>優惠商品</li>
+            </ul>
+            <ul>
+                <li>登入</li>
+                <li>Samuel Lin</li>
+            </ul>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    </header>
+    @RenderBody()
+    <footer>
+        <ul>
+            <li>聯絡我們</li>
+            <li>關於我們</li>
+            <li>使用教學</li>
+            <li>常見問題</li>
+            <li>使用條款</li>
+        </ul>
+        <div class="copyright">
+            EasyBuy company 2018 version 1.0 
+        </div>
+    </footer>
+    @*
+        
+        @Html.Partial("_LoginPartial")
+    *@
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")*@
 </body>
 </html>

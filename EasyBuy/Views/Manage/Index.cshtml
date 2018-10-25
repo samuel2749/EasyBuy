@@ -29,12 +29,12 @@
             @Html.ActionLink("管理", "ManageLogins") ]
         </dd>
         @*
-            電話號碼可用作為雙重要素驗證系統中的第二項驗證要素。
+            電話號碼可以當做雙因素驗證系統中的第二個驗證因素。
              
-             請參閱<a href="https://go.microsoft.com/fwlink/?LinkId=403804">此文章</a>
-                以取得設定此 ASP.NET 應用程式使用簡訊來支援雙重要素驗證的詳細資料。
+             請參閱<a href="http://go.microsoft.com/fwlink/?LinkId=403804">此文章</a>
+                以了解設定此 ASP.NET 應用程式以支援使用 SMS 進行雙因素驗證的詳細資料。
              
-             設定了雙重驗證之後，請取消對下列區塊的註解
+            雙因素驗證設定完成之後，請取消註解以下區塊
         *@
         @*  
             <dt>電話號碼:</dt>
@@ -47,7 +47,7 @@
                     using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
-                        <text>[<input type="submit" value="移除" class="btn-link" />]</text>
+                        <text>[<input type="submit" value="Remove" class="btn-link" />]</text>
                     }
                 }
                 else
@@ -59,8 +59,8 @@
         <dt>雙因素驗證:</dt>
         <dd>
             <p>
-                未設定任何雙重要素驗證提供者。請參閱<a href="https://go.microsoft.com/fwlink/?LinkId=403804">此文章</a>
-                以取得設定此 ASP.NET 應用程式以支援雙重要素驗證的詳細資料。
+                並未設定雙因素驗證提供者。請參閱<a href="http://go.microsoft.com/fwlink/?LinkId=403804">此文章</a>
+                以了解設定此 ASP.NET 應用程式以支援雙因素驗證的詳細資料。
             </p>
             @*@if (Model.TwoFactor)
                 {

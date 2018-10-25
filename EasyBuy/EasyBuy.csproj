@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,16 +9,15 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{89C292B4-63B9-44D2-85BB-D35D09BC588B}</ProjectGuid>
+    <ProjectGuid>{586B5A11-204B-49E7-8351-9515AC74B483}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EasyBuy</RootNamespace>
     <AssemblyName>EasyBuy</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -37,7 +36,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
@@ -46,8 +44,37 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -161,27 +188,6 @@
     <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
       <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -204,15 +210,173 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\main.css">
+      <DependentUpon>main.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
+    <Content Include="Content\reset.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\01.jpg" />
+    <Content Include="images\BackGround.JPG" />
+    <Content Include="images\BackGround_1.jpg" />
+    <Content Include="images\BackGround_2.jpg" />
+    <Content Include="images\BackGround_4.jpg" />
+    <Content Include="images\Background_5.jpg" />
+    <Content Include="images\BackGround_6.jpg" />
+    <Content Include="images\BackGrtound_3.jpg" />
+    <Content Include="images\Bird.jpg" />
+    <Content Include="images\Black Forest.jpg" />
+    <Content Include="images\Black Forest\P1.jpg" />
+    <Content Include="images\Black Forest\P2.jpg" />
+    <Content Include="images\Black Forest\P3.jpg" />
+    <Content Include="images\Black Forest\P4.jpg" />
+    <Content Include="images\Black Forest\P5.jpg" />
+    <Content Include="images\Black Forest\P6.jpg" />
+    <Content Include="images\Black Forest\P7.jpg" />
+    <Content Include="images\blank-item3.jpg" />
+    <Content Include="images\Blue_Sky.jpg" />
+    <Content Include="images\Brick.jpg" />
+    <Content Include="images\Brio Donuts.jpg" />
+    <Content Include="images\Cancel.jpg" />
+    <Content Include="images\Cheese Cake.jpg" />
+    <Content Include="images\Chocolate Cake.jpg" />
+    <Content Include="images\Colorful Macaron.jpg" />
+    <Content Include="images\End_Button_Image.jpg" />
+    <Content Include="images\Fruit Cake.jpg" />
+    <Content Include="images\Fruit Cake\P1.jpg" />
+    <Content Include="images\Fruit Cake\P2.jpg" />
+    <Content Include="images\Fruit Cake\P3.jpg" />
+    <Content Include="images\Fruit Cake\P4.jpg" />
+    <Content Include="images\Fruit Cake\P5.jpg" />
+    <Content Include="images\Fruit Cake\P6.jpg" />
+    <Content Include="images\Fruit Cake\P7.jpg" />
+    <Content Include="images\Fruit Cake\P8.jpg" />
+    <Content Include="images\Fruit Cake\P9.jpg" />
+    <Content Include="images\Honey Cheese.jpg" />
+    <Content Include="images\Left_Arrow.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\Logo_Pic.jpg" />
+    <Content Include="images\Logo_Pic_2.jpg" />
+    <Content Include="images\Logo_Pic_3.jpg" />
+    <Content Include="images\Logo_Pic_4.jpg" />
+    <Content Include="images\Milk Fruit Donut.jpg" />
+    <Content Include="images\Napoleon Cake.jpg" />
+    <Content Include="images\new3.swf" />
+    <Content Include="images\Next_images.jpg" />
+    <Content Include="images\P1.jpg" />
+    <Content Include="images\Right_Arrow.png" />
+    <Content Include="images\中華古坑咖啡豆.jpg" />
+    <Content Include="images\中華古坑咖啡豆天皇級.jpg" />
+    <Content Include="images\中華古坑咖啡豆御用級.jpg" />
+    <Content Include="images\中華古坑濾掛式咖啡.jpg" />
+    <Content Include="images\中華古坑調和咖啡豆.jpg" />
+    <Content Include="images\乳液.png" />
+    <Content Include="images\乳液001.gif" />
+    <Content Include="images\乳液001.png" />
+    <Content Include="images\乳液002.gif" />
+    <Content Include="images\乳液002.png" />
+    <Content Include="images\乳液003.png" />
+    <Content Include="images\乳液004.jpg" />
+    <Content Include="images\乳液004.png" />
+    <Content Include="images\乳液005.png" />
+    <Content Include="images\乳液006.png" />
+    <Content Include="images\乳液007.png" />
+    <Content Include="images\乳液008.png" />
+    <Content Include="images\伴手禮.png" />
+    <Content Include="images\伴手禮001.gif" />
+    <Content Include="images\伴手禮001.png" />
+    <Content Include="images\伴手禮002.gif" />
+    <Content Include="images\伴手禮002.png" />
+    <Content Include="images\伴手禮003.png" />
+    <Content Include="images\伴手禮004.png" />
+    <Content Include="images\伴手禮005.png" />
+    <Content Include="images\伴手禮006.png" />
+    <Content Include="images\伴手禮007.png" />
+    <Content Include="images\伴手禮008.png" />
+    <Content Include="images\保健品.png" />
+    <Content Include="images\保健品001.gif" />
+    <Content Include="images\保健品001.png" />
+    <Content Include="images\保健品002.gif" />
+    <Content Include="images\保健品002.png" />
+    <Content Include="images\保健品003.jpg" />
+    <Content Include="images\保健品003.png" />
+    <Content Include="images\保健品004.jpg" />
+    <Content Include="images\保健品004.png" />
+    <Content Include="images\保健品005.jpg" />
+    <Content Include="images\保健品005.png" />
+    <Content Include="images\保健品006.jpg" />
+    <Content Include="images\保健品006.png" />
+    <Content Include="images\保健品007.jpg" />
+    <Content Include="images\保健品007.png" />
+    <Content Include="images\保健品008.jpg" />
+    <Content Include="images\保健品008.png" />
+    <Content Include="images\保健品009.jpg" />
+    <Content Include="images\保健品009.png" />
+    <Content Include="images\天然無患子淨化沐浴露.jpg" />
+    <Content Include="images\天然無患子淨化洗髮露.jpg" />
+    <Content Include="images\天然無患子潔淨組.jpg" />
+    <Content Include="images\安堤低糖綜合蔬果酵素.jpg" />
+    <Content Include="images\安堤天然柑橘糖.jpg" />
+    <Content Include="images\彩繪馬克杯01.jpg" />
+    <Content Include="images\彩繪馬克杯02.jpg" />
+    <Content Include="images\彩繪馬克杯03.JPG" />
+    <Content Include="images\彩繪馬克杯04.JPG" />
+    <Content Include="images\彩繪馬克杯05.JPG" />
+    <Content Include="images\彩繪馬克杯06.JPG" />
+    <Content Include="images\彩繪馬克杯07.JPG" />
+    <Content Include="images\彩繪馬克杯08.JPG" />
+    <Content Include="images\彩繪馬克杯09.jpg" />
+    <Content Include="images\彩繪馬克杯10.JPG" />
+    <Content Include="images\彩繪馬克杯11.JPG" />
+    <Content Include="images\彩繪馬克杯12.jpg" />
+    <Content Include="images\植萃亮妍淨白凍膜.jpg" />
+    <Content Include="images\白米備長炭皂.jpg" />
+    <Content Include="images\白米黑豆皂.jpg" />
+    <Content Include="images\米糠玉容散皂.jpg" />
+    <Content Include="images\米糠白芷皂.jpg" />
+    <Content Include="images\糙米當歸皂.jpg" />
+    <Content Include="images\素色馬克杯.jpg" />
+    <Content Include="images\胚芽平安皂.jpg" />
+    <Content Include="images\逆齡喚妍植萃霜膜組.jpg" />
+    <Content Include="images\逆齡奇肌植萃精華組.jpg" />
+    <Content Include="images\逆齡植萃套組.jpg" />
+    <Content Include="images\面膜.png" />
+    <Content Include="images\面膜001.gif" />
+    <Content Include="images\面膜001.png" />
+    <Content Include="images\面膜002.gif" />
+    <Content Include="images\面膜002.png" />
+    <Content Include="images\面膜003.png" />
+    <Content Include="images\面膜004.png" />
+    <Content Include="images\面膜005.png" />
+    <Content Include="images\面膜006.png" />
+    <Content Include="images\面膜007.png" />
+    <Content Include="images\面膜008.png" />
+    <Content Include="images\面膜009.png" />
+    <Content Include="images\韓國高麗人蔘顆粒茶.JPG" />
+    <Content Include="images\高科技藍寶石1.JPG" />
+    <Content Include="images\高科技藍寶石2.JPG" />
+    <Content Include="images\高科技藍寶石3.jpg" />
+    <Content Include="images\高科技藍寶石4.jpg" />
+    <Content Include="images\高科技藍寶石5.jpg" />
+    <Content Include="images\高科技藍寶石6.jpg" />
+    <Content Include="images\高科技藍寶石7.jpg" />
+    <Content Include="images\黑米火龍果皂.jpg" />
+    <Content Include="images\黑米釋迦皂.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\main.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -224,6 +388,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -264,15 +429,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <PropertyGroup>
@@ -291,9 +451,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>4632</DevelopmentServerPort>
+          <DevelopmentServerPort>49895</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:4632/</IISUrl>
+          <IISUrl>http://localhost:49895/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -307,8 +467,8 @@
     <PropertyGroup>
       <ErrorText>此專案參考這部電腦上所缺少的 NuGet 封裝。請啟用 NuGet 封裝還原，以下載該封裝。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
