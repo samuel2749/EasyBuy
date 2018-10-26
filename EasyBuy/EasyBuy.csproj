@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -210,13 +211,19 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\main.css">
+    <Content Include="css\common.css">
+      <DependentUpon>common.scss</DependentUpon>
+    </Content>
+    <Content Include="css\common.min.css">
+      <DependentUpon>common.css</DependentUpon>
+    </Content>
+    <Content Include="css\main.css">
       <DependentUpon>main.scss</DependentUpon>
     </Content>
-    <Content Include="Content\main.min.css">
+    <Content Include="css\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
-    <Content Include="Content\reset.css" />
+    <Content Include="css\reset.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -367,16 +374,19 @@
     <Content Include="images\高科技藍寶石7.jpg" />
     <Content Include="images\黑米火龍果皂.jpg" />
     <Content Include="images\黑米釋迦皂.jpg" />
+    <Content Include="js\common.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\main.scss" />
+    <Content Include="css\main.scss" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="css\home.scss" />
+    <Content Include="css\common.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

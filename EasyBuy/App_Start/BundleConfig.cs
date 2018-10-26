@@ -8,6 +8,18 @@ namespace EasyBuy
         // 如需「搭配」的詳細資訊，請瀏覽 http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            #region css
+            bundles.Add(new StyleBundle("~/Content/common").Include(
+                        "~/Content/reset.css",
+                        "~/css/common.css"));
+            #endregion
+
+            #region js
+            bundles.Add(new ScriptBundle("~/bundles/common").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/js/common.js"));
+            #endregion
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -26,7 +38,6 @@ namespace EasyBuy
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-            bundles.Add(new StyleBundle("~/Content/common").Include("~/Content/reset.css"));
         }
     }
 }

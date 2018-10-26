@@ -2,5 +2,13 @@
   {
     "outputFile": "Content/main.css",
     "inputFile": "Content/main.scss"
+  },
+  {
+    "outputFile": "js/common.es5.js",
+    "inputFile": "js/common.js"
+  },
+  {
+    "outputFile": "css/common.css",
+    "inputFile": "css/common.scss"
   }
 ]
