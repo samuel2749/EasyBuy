@@ -1,1 +1,19 @@
-﻿
+﻿.menu_box {
+  width: 100%;
+  text-align: center; }
+  .menu_box ul {
+    display: inline-block; }
+    .menu_box ul.menu li {
+      float: left;
+      list-style: none;
+      font-size: 16px;
+      background: #000;
+      display: inline-block;
+      color: #fff;
+      padding: 5px 20px;
+      letter-spacing: 3px;
+      margin: 0 5px; }
+  .menu_box::after {
+    content: "";
+    display: block;
+    clear: both; }

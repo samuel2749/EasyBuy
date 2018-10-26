@@ -10,7 +10,7 @@ namespace EasyBuy
         {
             #region css
             bundles.Add(new StyleBundle("~/Content/common").Include(
-                        "~/Content/reset.css",
+                        "~/css/reset.css",
                         "~/css/common.css"));
             #endregion
 
