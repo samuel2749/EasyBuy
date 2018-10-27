@@ -1,0 +1,19 @@
+﻿@import "./variables.scss";
+@mixin pc-width() {
+    @media screen and (min-width: $pc-media) {
+        @content;
+    }
+}
+@mixin pad-width() {
+    @media screen and (min-width: $pad-media) and (max-width: $pcs-media) {
+        @content;
+    }
+}
+@mixin mobile-width() {
+    @media screen and (max-width: $phone-media) {
+        @content;
+    }
+}
+@function vw($value, $screen: 1920) {
+    @return $value / $screen * 100 + vw;
+}

@@ -217,6 +217,12 @@
     <Content Include="css\common.min.css">
       <DependentUpon>common.css</DependentUpon>
     </Content>
+    <Content Include="css\function.css">
+      <DependentUpon>function.scss</DependentUpon>
+    </Content>
+    <Content Include="css\function.min.css">
+      <DependentUpon>function.css</DependentUpon>
+    </Content>
     <Content Include="css\main.css">
       <DependentUpon>main.scss</DependentUpon>
     </Content>
@@ -387,6 +393,8 @@
     </None>
     <Content Include="css\home.scss" />
     <Content Include="css\common.scss" />
+    <Content Include="css\function.scss" />
+    <Content Include="css\variables.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -10,5 +10,9 @@
   {
     "outputFile": "css/common.css",
     "inputFile": "css/common.scss"
+  },
+  {
+    "outputFile": "css/function.css",
+    "inputFile": "css/function.scss"
   }
 ]
