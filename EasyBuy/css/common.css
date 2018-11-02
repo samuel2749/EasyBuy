@@ -1,14 +1,5 @@
-﻿@media screen and (min-width: 960px) {
-  h1 {
-    color: #ff1; } }
-
-@media screen and (min-width: 641px) and (max-width: 959px) {
-  h1 {
-    color: #f33; } }
-
-@media screen and (max-width: 640px) {
-  h1 {
-    color: #33f; } }
+﻿body {
+  background: #ececec; }
 
 header .logo {
   width: 15.625vw;
@@ -25,20 +16,55 @@ header h1 {
 
 header .menu_box {
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  background: #000;
+  margin-bottom: 20px; }
+  header .menu_box a {
+    text-decoration: none;
+    font-size: 22px; }
   header .menu_box ul {
     display: inline-block; }
     header .menu_box ul.menu li {
       float: left;
       list-style: none;
       font-size: 0.83333vw;
-      background: #000;
       display: inline-block;
       color: #fff;
       padding: 5px 20px;
       letter-spacing: 3px;
       margin: 0 5px; }
+      header .menu_box ul.menu li a {
+        color: #fff; }
+    header .menu_box ul.admin {
+      position: absolute;
+      top: 20px;
+      right: 50px; }
+      header .menu_box ul.admin li {
+        float: left;
+        font-size: 16px; }
+        header .menu_box ul.admin li:nth-child(n+1) {
+          margin-right: 10px; }
+        header .menu_box ul.admin li a {
+          color: #000;
+          font-size: inherit; }
   header .menu_box::after {
     content: "";
     display: block;
     clear: both; }
+
+footer {
+  padding: 15px 0;
+  margin: 15px 0;
+  text-align: center;
+  border-top: solid 5px; }
+  footer ul {
+    padding-bottom: 20px;
+    display: inline-block; }
+    footer ul li {
+      float: left; }
+      footer ul li:nth-child(n+1) {
+        margin-right: 10px; }
+      footer ul li a {
+        text-decoration: none;
+        color: #000;
+        font-size: 18px; }

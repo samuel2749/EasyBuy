@@ -1,4 +1,7 @@
 ﻿@import "./function.scss";
+body{
+  background: #ececec;
+}
 header{
   .logo{
     width: vw(300);
@@ -18,6 +21,12 @@ header{
   .menu_box{
     width: 100%;
     text-align: center;
+    background: #000;
+    margin-bottom: 20px;
+    a{
+      text-decoration: none;
+      font-size: 22px;
+    }
     ul{
       display: inline-block;
       &.menu{
@@ -25,20 +34,62 @@ header{
           float: left;    
           list-style: none;
           font-size: vw(16);
-          background: #000;
+          // background: #000;
           display: inline-block;
           color: #fff;
           padding: 5px 20px;
           letter-spacing: 3px;
           margin: 0 5px;
+          a{
+            color: #fff;
+          }
         }
+        
       }
-      
+      &.admin{
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        li{
+          float: left;
+          &:nth-child(n+1){
+            margin-right: 10px;
+          }
+          font-size: 16px;
+          a{
+            color: #000;
+            font-size: inherit;
+          }
+        }
+        
+      }
     }
     &::after{
       content: "";
       display: block;
       clear: both;
+    }
+  }
+  
+}
+footer{
+  padding: 15px 0;
+  margin: 15px 0;
+  text-align: center;
+  border-top: solid 5px;
+  ul{
+    padding-bottom: 20px;
+    display: inline-block;
+    li{
+      float: left;
+      &:nth-child(n+1){
+        margin-right: 10px;
+      }
+      a{
+        text-decoration: none;
+        color: #000;
+        font-size: 18px;
+      }
     }
   }
 }
