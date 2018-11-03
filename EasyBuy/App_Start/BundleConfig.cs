@@ -12,6 +12,8 @@ namespace EasyBuy
             bundles.Add(new StyleBundle("~/Content/common").Include(
                         "~/css/reset.css",
                         "~/css/common.css"));
+            bundles.Add(new StyleBundle("~/Content/account").Include(
+                        "~/css/account.css"));
             #endregion
 
             #region js

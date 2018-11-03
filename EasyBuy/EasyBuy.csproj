@@ -211,6 +211,12 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\account.css">
+      <DependentUpon>account.scss</DependentUpon>
+    </Content>
+    <Content Include="css\account.min.css">
+      <DependentUpon>account.css</DependentUpon>
+    </Content>
     <Content Include="css\common.css">
       <DependentUpon>common.scss</DependentUpon>
     </Content>
@@ -395,6 +401,7 @@
     <Content Include="css\common.scss" />
     <Content Include="css\function.scss" />
     <Content Include="css\variables.scss" />
+    <Content Include="css\account.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

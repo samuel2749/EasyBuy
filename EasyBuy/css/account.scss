@@ -1,0 +1,39 @@
+﻿h2{
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 20px;
+    text-indent: 20px;
+    text-align: center;
+    padding: 10px 30px;
+}
+.btn{
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 20px;
+    text-indent: 20px;
+}
+.form-horizontal{
+    width: 300px;
+    margin: 20px auto;
+    .form-group{
+        margin-bottom: 10px;
+        label{
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        input{
+            width: 100%;
+        }
+        .checkbox{
+            input{
+                width: auto;
+            }
+        }
+    }
+    p.register{
+        text-align: center;
+    }
+}

@@ -14,5 +14,9 @@
   {
     "outputFile": "css/function.css",
     "inputFile": "css/function.scss"
+  },
+  {
+    "outputFile": "css/account.css",
+    "inputFile": "css/account.scss"
   }
 ]

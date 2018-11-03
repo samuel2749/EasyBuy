@@ -14,28 +14,28 @@
 <body>
     <header>
         <div class="logo">
-            <img src="images/logo.jpg"/>
+            <img src="~/images/logo.jpg"/>
         </div>
         <h1 class="title">@ViewBag.Title</h1>
         <a href="#" class="menu_btn"></a>
         <div class="menu_box">
             <ul class="menu">
-                <li><a href="#">首頁</a></li>
+                <li><a href="~/">首頁</a></li>
                 <li><a href="#">熱賣商品</a></li>
                 <li><a href="#">最新商品</a></li>
                 <li><a href="#">優惠商品</a></li>
             </ul>
             <ul class="admin">
                 <li>Samuel Lin</li>
-                <li><a href="#">登入</a></li>
+                <li><a href="~/account/login">登入</a></li>
             </ul>
         </div>
     </header>
     @RenderBody()
     <footer>
         <ul>
-            <li><a href="#">聯絡我們</a></li>
-            <li><a href="#">關於我們</a></li>
+            <li><a href="~/contact">聯絡我們</a></li>
+            <li><a href="~/about">關於我們</a></li>
             <li><a href="#">使用教學</a></li>
             <li><a href="#">常見問題</a></li>
             <li><a href="#">使用條款</a></li>
