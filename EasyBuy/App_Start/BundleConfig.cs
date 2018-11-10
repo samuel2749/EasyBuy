@@ -18,6 +18,8 @@ namespace EasyBuy
 
             #region js
             bundles.Add(new ScriptBundle("~/bundles/common").Include(
+                        "~/js/lib/vue.js",
+                        "~/js/lib/vue-http-loader.js",
                         "~/Scripts/jquery-{version}.js",
                         "~/js/common.js"));
             #endregion
