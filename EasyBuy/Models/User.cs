@@ -27,8 +27,8 @@ namespace EasyBuy.Models
         public string City { get; set; }
         public string Area { get; set; }
         public string Address { get; set; }
-        public System.DateTime UpdateDate { get; set; }
-        public System.DateTime CreateDate { get; set; }
+        public Nullable<System.DateTime> UpdateDate { get; set; }
+        public Nullable<System.DateTime> CreateDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }

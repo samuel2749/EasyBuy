@@ -152,7 +152,18 @@ namespace EasyBuy.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
+                Models.EasyBuyEntities db = new Models.EasyBuyEntities();
+                Models.User user = new Models.User
+                {
+                    Email = model.Email,
+                    Name = model.UserName,
+                    Password = model.Password,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+                db.Users.Add(user);
+                db.SaveChanges();
+                /*var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -166,7 +177,7 @@ namespace EasyBuy.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-                AddErrors(result);
+                AddErrors(result);*/
             }
 
             // 如果執行到這裡，發生某項失敗，則重新顯示表單

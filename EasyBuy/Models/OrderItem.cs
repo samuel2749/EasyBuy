@@ -19,7 +19,7 @@ namespace EasyBuy.Models
         public int ProductId { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
         public Nullable<decimal> DiscountPrice { get; set; }
-        public System.DateTime CreateDate { get; set; }
+        public Nullable<System.DateTime> CreateDate { get; set; }
     
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
