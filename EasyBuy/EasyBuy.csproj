@@ -426,6 +426,7 @@
       <DependentUpon>EasyBuy.edmx</DependentUpon>
       <LastGenOutput>EasyBuy.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\EasyBuy.edmx.sql" />
     <Content Include="Models\EasyBuy.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EasyBuy.edmx</DependentUpon>

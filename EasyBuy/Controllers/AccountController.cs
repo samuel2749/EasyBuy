@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using EasyBuy.Models;
+using System.Collections.Generic;
 
 namespace EasyBuy.Controllers
 {
@@ -153,8 +154,29 @@ namespace EasyBuy.Controllers
             if (ModelState.IsValid)
             {
                 Models.EasyBuyEntities db = new Models.EasyBuyEntities();
-                Models.User user = new Models.User
+                var checkUser = db.Users.Where(p => p.Email == model.Email).FirstOrDefault();
+                if (checkUser == null)
                 {
+                    Models.User user = new Models.User
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Email = model.Email,
+                        Name = model.UserName,
+                        Password = model.Password,
+                        CreateDate = DateTime.Now,
+                        UpdateDate = DateTime.Now
+                    };
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    ViewBag.result = 1;
+                }
+                else
+                {
+                    ViewBag.result = 0;
+                }
+                /*Models.User user = new Models.User
+                {
+                    Id = Guid.NewGuid().ToString(),
                     Email = model.Email,
                     Name = model.UserName,
                     Password = model.Password,
@@ -162,7 +184,7 @@ namespace EasyBuy.Controllers
                     UpdateDate = DateTime.Now
                 };
                 db.Users.Add(user);
-                db.SaveChanges();
+                db.SaveChanges();*/
                 /*var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

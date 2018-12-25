@@ -22,7 +22,7 @@ namespace EasyBuy.Models
     
         public int Id { get; set; }
         public int OrderNumber { get; set; }
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; }
         public Nullable<decimal> TotalAmount { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
