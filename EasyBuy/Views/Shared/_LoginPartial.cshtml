@@ -1,11 +1,12 @@
 ﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
+
+@if (Session["id"] != null && !string.IsNullOrWhiteSpace(Session["id"].ToString()))
 {
     @Html.AntiForgeryToken()
 
     <li>
         @*Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
-        <span class="user-name">Hello @User.Identity.GetUserName() ! </span>
+        <span class="user-name">Hello @Session["name"] ! </span>
     </li>
     <li>
         <a href="#" id="logout" class="logout-btn">登出</a>
