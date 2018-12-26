@@ -204,6 +204,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Lib\Common.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EasyBuy.Context.cs">
       <AutoGen>True</AutoGen>
@@ -241,10 +242,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\EasyBuy.mdf" />
-    <Content Include="App_Data\EasyBuy_log.ldf">
-      <DependentUpon>EasyBuy.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\account.css">
@@ -423,8 +420,11 @@
     <Content Include="images\黑米火龍果皂.jpg" />
     <Content Include="images\黑米釋迦皂.jpg" />
     <Content Include="js\common.js" />
+    <Content Include="js\lib\swiper.min.js" />
+    <Content Include="js\lib\vue-awesome-swiper.js" />
     <Content Include="js\lib\vue-http-loader.js" />
     <Content Include="js\lib\vue.js" />
+    <Content Include="js\lib\vue.min.js" />
     <Content Include="Models\EasyBuy.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EasyBuy.edmx</DependentUpon>
@@ -508,7 +508,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Common\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

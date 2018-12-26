@@ -73,10 +73,22 @@ namespace EasyBuy.Controllers
             {
                 return View(model);
             }
-
+            EasyBuyEntities db = new EasyBuyEntities();
+            var user = db.Users
+                .Where(p => p.Email == model.Email && p.Password == model.Password).FirstOrDefault();
+            if(user != null)
+            {
+                SetSissionByUser(user);
+                return RedirectToLocal(returnUrl);
+            }
+            else
+            {
+                ViewBag.result = 0;
+                return View(model);
+            }
             // 這不會計算為帳戶鎖定的登入失敗
             // 若要啟用密碼失敗來觸發帳戶鎖定，請變更為 shouldLockout: true
-            ApplicationUser signedUser = UserManager.FindByEmail(model.Email);
+            /*ApplicationUser signedUser = UserManager.FindByEmail(model.Email);
             var result = await SignInManager.PasswordSignInAsync(signedUser.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
@@ -90,7 +102,7 @@ namespace EasyBuy.Controllers
                 default:
                     ModelState.AddModelError("", "登入嘗試失敗。");
                     return View(model);
-            }
+            }*/
         }
 
         //
@@ -168,23 +180,13 @@ namespace EasyBuy.Controllers
                     };
                     db.Users.Add(user);
                     db.SaveChanges();
+                    SetSissionByUser(user);
                     ViewBag.result = 1;
                 }
                 else
                 {
                     ViewBag.result = 0;
                 }
-                /*Models.User user = new Models.User
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Email = model.Email,
-                    Name = model.UserName,
-                    Password = model.Password,
-                    CreateDate = DateTime.Now,
-                    UpdateDate = DateTime.Now
-                };
-                db.Users.Add(user);
-                db.SaveChanges();*/
                 /*var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -422,10 +424,12 @@ namespace EasyBuy.Controllers
         //
         // POST: /Account/LogOff
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            //AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session.RemoveAll();
             return Json(new  { result = true }, JsonRequestBehavior.AllowGet);
         }
 
@@ -515,5 +519,11 @@ namespace EasyBuy.Controllers
             }
         }
         #endregion
+
+        public void SetSissionByUser(User user)
+        {
+            Session["id"] = user.Id;
+            Session["name"] = user.Name;
+        }
     }
 }

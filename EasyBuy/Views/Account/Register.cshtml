@@ -1,8 +1,19 @@
 ﻿@model EasyBuy.Models.RegisterViewModel
 
 @Styles.Render("~/Content/account")
+
+<script>
+    (function () {
+        var result = @ViewBag.result;
+        if (result === 1) {
+            alert("會員建立成功!");
+            location.href = "@Url.Action("index", "home")";
+        } else if (result === 0) {
+            alert("email已被使用!");
+        }
+    })();
+</script>
 <h2>註冊</h2>
-<p>@ViewBag.result</p>
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
