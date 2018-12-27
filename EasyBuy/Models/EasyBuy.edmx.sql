@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/25/2018 15:33:58
--- Generated from EDMX file: D:\net_test\EasyBuy\EasyBuy\Models\EasyBuy.edmx
+-- Date Created: 12/27/2018 23:32:19
+-- Generated from EDMX file: C:\CUST\EasyBuy\EasyBuy\Models\EasyBuy.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,9 +17,6 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_Order_ToUsers]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Orders] DROP CONSTRAINT [FK_Order_ToUsers];
-GO
 IF OBJECT_ID(N'[dbo].[FK_OrderItem_ToOrder]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[OrderItems] DROP CONSTRAINT [FK_OrderItem_ToOrder];
 GO
@@ -46,8 +43,8 @@ GO
 IF OBJECT_ID(N'[dbo].[Suppliers]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Suppliers];
 GO
-IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Users];
+IF OBJECT_ID(N'[EasyBuyModelStoreContainer].[Users]', 'U') IS NOT NULL
+    DROP TABLE [EasyBuyModelStoreContainer].[Users];
 GO
 
 -- --------------------------------------------------
@@ -83,6 +80,11 @@ CREATE TABLE [dbo].[Products] (
     [Name] nvarchar(50)  NOT NULL,
     [UnitPrice] decimal(12,2)  NOT NULL,
     [DiscountPrice] decimal(12,2)  NULL,
+    [Pic] nvarchar(250)  NOT NULL,
+    [Description] nvarchar(max)  NOT NULL,
+    [IsHot] int  NOT NULL,
+    [IsPromo] int  NOT NULL,
+    [Total] int  NOT NULL,
     [UpdateDate] datetime  NULL,
     [CreateDate] datetime  NULL
 );

@@ -25,6 +25,11 @@ namespace EasyBuy.Models
         public string Name { get; set; }
         public decimal UnitPrice { get; set; }
         public Nullable<decimal> DiscountPrice { get; set; }
+        public string Pic { get; set; }
+        public string Description { get; set; }
+        public int IsHot { get; set; }
+        public int IsPromo { get; set; }
+        public int Total { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
     

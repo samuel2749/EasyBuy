@@ -207,19 +207,19 @@
     <Compile Include="Lib\Common.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EasyBuy.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>EasyBuy.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\EasyBuy.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>EasyBuy.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\EasyBuy.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>EasyBuy.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -429,14 +429,17 @@
     <Content Include="js\lib\vue.js" />
     <Content Include="js\lib\vue.min.js" />
     <Content Include="Models\EasyBuy.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EasyBuy.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EasyBuy.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EasyBuy.edmx.diagram">
+      <DependentUpon>EasyBuy.edmx</DependentUpon>
     </Content>
     <Content Include="Models\EasyBuy.edmx.sql" />
     <Content Include="Models\EasyBuy.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EasyBuy.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EasyBuy.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
@@ -457,15 +460,21 @@
     <Content Include="components\test.vue">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\EasyBuy.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EasyBuy.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EasyBuy.edmx.diagram">
-      <DependentUpon>EasyBuy.edmx</DependentUpon>
+    <Content Include="components\product-list\index.vue">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="components\product-list\index.vue" />
     <Content Include="components\product-list\product-list.scss" />
+    <Content Include="components\product-list\item.vue">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="components\product\index.vue">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="components\product\product.scss" />
+    <Content Include="components\cart\index.vue">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="components\cart\cart.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -527,6 +536,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\EasyBuy.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EasyBuy.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
