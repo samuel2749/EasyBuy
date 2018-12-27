@@ -1,4 +1,4 @@
-{
+﻿{
   "compilers": {
     "less": {
       "autoPrefix": "",
@@ -13,15 +13,13 @@
       "sourceMap": false
     },
     "sass": {
-      "autoPrefix": "",
       "includePath": "",
       "indentType": "space",
       "indentWidth": 2,
-      "outputStyle": "nested",
+      "outputStyle": "expanded",
       "Precision": 5,
       "relativeUrls": true,
       "sourceMapRoot": "",
-      "lineFeed": "",
       "sourceMap": false
     },
     "stylus": {
@@ -34,28 +32,16 @@
       "bare": false,
       "runtimeMode": "node",
       "sourceMap": false
-    },
-    "handlebars": {
-      "root": "",
-      "noBOM": false,
-      "name": "",
-      "namespace": "",
-      "knownHelpersOnly": false,
-      "forcePartial": false,
-      "knownHelpers": [],
-      "commonjs": "",
-      "amd": false,
-      "sourceMap": false
     }
   },
   "minifiers": {
     "css": {
-      "enabled": true,
+      "enabled": false,
       "termSemicolons": true,
       "gzip": false
     },
     "javascript": {
-      "enabled": true,
+      "enabled": false,
       "termSemicolons": true,
       "gzip": false
     }

@@ -18,5 +18,9 @@
   {
     "outputFile": "css/account.css",
     "inputFile": "css/account.scss"
+  },
+  {
+    "outputFile": "components/product-list/product-list.css",
+    "inputFile": "components/product-list/product-list.scss"
   }
 ]
