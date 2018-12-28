@@ -200,6 +200,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InpageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -423,6 +424,7 @@
     <Content Include="images\黑米火龍果皂.jpg" />
     <Content Include="images\黑米釋迦皂.jpg" />
     <Content Include="js\common.js" />
+    <Content Include="js\global.js" />
     <Content Include="js\lib\swiper.min.js" />
     <Content Include="js\lib\vue-awesome-swiper.js" />
     <Content Include="js\lib\vue-http-loader.js" />
@@ -521,6 +523,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Inpage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

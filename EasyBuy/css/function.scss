@@ -1,6 +1,11 @@
 ﻿@import "./variables.scss";
+@mixin pc-big-width() {
+    @media screen and (min-width: $pc-big-media) {
+        @content;
+    }
+}
 @mixin pc-width() {
-    @media screen and (min-width: $pc-media) {
+    @media screen and (min-width: $pc-media) and (max-width: $pcs-big-media) {
         @content;
     }
 }

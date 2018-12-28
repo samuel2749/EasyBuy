@@ -3,8 +3,8 @@
       <img :src="item.Pic" class="img">
       <span class="title">{{item.Name}}</span>
       <div class="price-content" :class="item.DiscountPrice? 'discount': false">
-        <span class="uint-price">{{item.UnitPrice}}</span>
-        <span class="discount-price">{{item.DiscountPrice}}</span>
+        <span class="uint-price">{{getCurrency(item.UnitPrice)}}</span>
+        <span class="discount-price" v-if="item.DiscountPrice">{{getCurrency(item.DiscountPrice)}}</span>
       </div>
     </a>
 </template>
@@ -23,6 +23,11 @@ module.exports = {
     }
   },
   mounted() {
+  },
+  methods:{
+    getCurrency(pVal){
+      return window.Global.currency + " " + pVal;
+    }
   }
 }
 </script>

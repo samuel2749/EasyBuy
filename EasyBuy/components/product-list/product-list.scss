@@ -2,27 +2,36 @@
 .product-list{
   padding: 0 5%;
   .product-item{
+    position: relative;
     display: inline-block;
     .img{
       position: relative;
       width: 100%;
     }
     .title{
+      background: rgba($color: #000, $alpha: 0.5);
+      color: #fff;
       position: absolute;
-      top: pxToPercent(5);
-      left: pxToPercent(5);
+      overflow: hidden;
+      width: 98%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 2% 1%;
+      top: 0;
+      left: 0;
+      font-size: 20px;
     }
     .price-content{
-      position: absolute;
-      bottom: pxToPercent(5);
-      right: pxToPercent(5);
-      font-size: 12px;
+      position: relative;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      font-size: 16px;
+      text-align: right;
       span{
-        width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        .discount-price{
+        background: rgba($color: #fff, $alpha: 0.5);
+        &.discount-price{
+          margin-left: pxToPercent(10);
           color: red;
         }
       }
@@ -32,26 +41,34 @@
         }
       }
     }
+    @include pc-big-width{
+      $num: 6;
+      width: 15%;
+      margin: 0 0 2% 2%;
+      &:nth-child(#{$num}n+1){
+        margin-left: 0;
+      }
+    }
     @include pc-width{
-      $num: 5;
-      width: 18%;
-      margin: 0 0 2.5% 2.5%;
+      $num: 4;
+      width: 24%;
+      margin: 0 0 1.33% 1.33%;
       &:nth-child(#{$num}n+1){
         margin-left: 0;
       }
     }
     @include pad-width{
-      $num: 4;
-      width: 23.125%;
-      margin: 0 0 2.5% 2.5%;
+      $num: 3;
+      width: 32%;
+      margin: 0 0 2% 2%;
       &:nth-child(#{$num}n+1){
         margin-left: 0;
       }
     }
     @include mobile-width{
-      $num: 3;
-      width: 31.667%;
-      margin: 0 0 2.5% 2.5%;
+      $num: 2;
+      width: 49%;
+      margin: 0 0 2% 2%;
       &:nth-child(#{$num}n+1){
         margin-left: 0;
       }
