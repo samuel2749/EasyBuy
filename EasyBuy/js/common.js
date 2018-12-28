@@ -7,12 +7,10 @@ $(function(){
     })()
     
     function vueInit(){
-        new Vue({
-            el: '#my-app',
-            components: {
-                'my-component': httpVueLoader('./components/test.vue')
-            }
-        });  
+        $('.list').each(function(i){
+            createNewVue.call(this, i, "list", "product-list", "/components/product-list")
+        });
+        
         //createNewVue(1, "my-app", "my-component", "./components/test.vue");  
     }
 
@@ -25,26 +23,24 @@ $(function(){
                 console.log(data);
             })
         })
+        
     }
 
     function createNewVue(index, vueName, componentName, componentPath) {
         var self = $(this),
-            dataEle = self.find('#data'),
-            data = JSON.parse(dataEle.text()),
-            vueEle = "<_conponentName_ :data='data' :is-mobile='isMobile'></_conponentName_>",
+            vueEle = "<_conponentName_></_conponentName_>",
             components = {};
         vueName = vueName + '-_index_';
         vueName = vueName.replace('_index_', index + 1);
         vueEle = vueEle.replace(/_conponentName_/g, componentName);
-        dataEle.remove();
         self.attr('id', vueName);
         self.append(vueEle);
-        components[componentName] = httpVueLoader(OB.OriginHost(componentPath));
+        components[componentName] = httpVueLoader(componentPath);
         new Vue({
             el: '#' + vueName,
-            data: { data: data, isMobile: window.IsMobileDevice === 'True' },
-            components: components,
-            mixins: [mixins]
+            data: {},
+            components: components
+            //mixins: [mixins]
         });
     }
 })

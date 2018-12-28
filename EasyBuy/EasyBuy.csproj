@@ -286,13 +286,13 @@
     <Content Include="images\BackGrtound_3.jpg" />
     <Content Include="images\Bird.jpg" />
     <Content Include="images\Black Forest.jpg" />
-    <Content Include="images\Black Forest\P1.jpg" />
-    <Content Include="images\Black Forest\P2.jpg" />
-    <Content Include="images\Black Forest\P3.jpg" />
-    <Content Include="images\Black Forest\P4.jpg" />
-    <Content Include="images\Black Forest\P5.jpg" />
-    <Content Include="images\Black Forest\P6.jpg" />
-    <Content Include="images\Black Forest\P7.jpg" />
+    <Content Include="images\blackforest\P1.jpg" />
+    <Content Include="images\blackforest\P2.jpg" />
+    <Content Include="images\blackforest\P3.jpg" />
+    <Content Include="images\blackforest\P4.jpg" />
+    <Content Include="images\blackforest\P5.jpg" />
+    <Content Include="images\blackforest\P6.jpg" />
+    <Content Include="images\blackforest\P7.jpg" />
     <Content Include="images\blank-item3.jpg" />
     <Content Include="images\Blue_Sky.jpg" />
     <Content Include="images\Brick.jpg" />
@@ -303,15 +303,15 @@
     <Content Include="images\Colorful Macaron.jpg" />
     <Content Include="images\End_Button_Image.jpg" />
     <Content Include="images\Fruit Cake.jpg" />
-    <Content Include="images\Fruit Cake\P1.jpg" />
-    <Content Include="images\Fruit Cake\P2.jpg" />
-    <Content Include="images\Fruit Cake\P3.jpg" />
-    <Content Include="images\Fruit Cake\P4.jpg" />
-    <Content Include="images\Fruit Cake\P5.jpg" />
-    <Content Include="images\Fruit Cake\P6.jpg" />
-    <Content Include="images\Fruit Cake\P7.jpg" />
-    <Content Include="images\Fruit Cake\P8.jpg" />
-    <Content Include="images\Fruit Cake\P9.jpg" />
+    <Content Include="images\fruitcake\P1.jpg" />
+    <Content Include="images\fruitcake\P2.jpg" />
+    <Content Include="images\fruitcake\P3.jpg" />
+    <Content Include="images\fruitcake\P4.jpg" />
+    <Content Include="images\fruitcake\P5.jpg" />
+    <Content Include="images\fruitcake\P6.jpg" />
+    <Content Include="images\fruitcake\P7.jpg" />
+    <Content Include="images\fruitcake\P8.jpg" />
+    <Content Include="images\fruitcake\P9.jpg" />
     <Content Include="images\Honey Cheese.jpg" />
     <Content Include="images\Left_Arrow.png" />
     <Content Include="images\logo.png" />
@@ -464,7 +464,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="components\product-list\product-list.scss" />
-    <Content Include="components\product-list\item.vue">
+    <Content Include="components\product-list\product-item.vue">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="components\product\index.vue">

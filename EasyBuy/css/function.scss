@@ -17,3 +17,7 @@
 @function vw($value, $screen: 1920) {
     @return $value / $screen * 100 + vw;
 }
+@function pxToPercent($value) {
+    @return ($value/(285-16))*100+%;
+}
+  
