@@ -54,20 +54,23 @@ GO
 -- Creating table 'OrderItems'
 CREATE TABLE [dbo].[OrderItems] (
     [Id] int  NOT NULL,
-    [OrderId] int  NOT NULL,
+    [OrderId] nvarchar(max)  NOT NULL,
     [ProductId] int  NOT NULL,
-    [UnitPrice] decimal(12,2)  NULL,
-    [DiscountPrice] decimal(12,2)  NULL,
+    [ProductName] nvarchar(50)  NOT NULL,
+    [ProductUnitPrice] decimal(12,2)  NOT NULL,
+    [ProductDiscountPrice] decimal(12,2)  NULL,
+    [ProductPic] nvarchar(250)  NOT NULL,
+    [ProductDescription] nvarchar(max)  NOT NULL,
     [CreateDate] datetime  NULL
 );
 GO
 
 -- Creating table 'Orders'
 CREATE TABLE [dbo].[Orders] (
-    [Id] int  NOT NULL,
-    [OrderNumber] int  NOT NULL,
+    [Id] nvarchar(max)  NOT NULL,
     [CustomerId] nvarchar(max)  NOT NULL,
     [TotalAmount] decimal(12,2)  NULL,
+    [Status] int  NULL,
     [UpdateDate] datetime  NULL,
     [CreateDate] datetime  NULL
 );

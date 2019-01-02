@@ -4,143 +4,143 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="EasyBuyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="EasyBuyModelStoreContainer">
-    <EntitySet Name="OrderItems" EntityType="EasyBuyModel.Store.OrderItems" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Orders" EntityType="EasyBuyModel.Store.Orders" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Products" EntityType="EasyBuyModel.Store.Products" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Suppliers" EntityType="EasyBuyModel.Store.Suppliers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Users" EntityType="EasyBuyModel.Store.Users" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_OrderItem_ToOrder" Association="EasyBuyModel.Store.FK_OrderItem_ToOrder">
-      <End Role="Orders" EntitySet="Orders" />
-      <End Role="OrderItems" EntitySet="OrderItems" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OrderItem_ToProduct" Association="EasyBuyModel.Store.FK_OrderItem_ToProduct">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="OrderItems" EntitySet="OrderItems" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Order_ToUsers" Association="EasyBuyModel.Store.FK_Order_ToUsers">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Orders" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Product_ToSupplier" Association="EasyBuyModel.Store.FK_Product_ToSupplier">
-      <End Role="Suppliers" EntitySet="Suppliers" />
-      <End Role="Products" EntitySet="Products" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="OrderItems">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="OrderId" Type="int" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
-    <Property Name="UnitPrice" Type="decimal" Nullable="true" Precision="12" Scale="2" />
-    <Property Name="DiscountPrice" Type="decimal" Nullable="true" Precision="12" Scale="2" />
-    <Property Name="CreateDate" Type="datetime" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Orders">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="OrderNumber" Type="int" Nullable="false" />
-    <Property Name="CustomerId" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TotalAmount" Type="decimal" Nullable="true" Precision="12" Scale="2" />
-    <Property Name="UpdateDate" Type="datetime" Nullable="true" />
-    <Property Name="CreateDate" Type="datetime" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Products">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="SupplierId" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="UnitPrice" Type="decimal" Nullable="false" Precision="12" Scale="2" />
-    <Property Name="DiscountPrice" Type="decimal" Nullable="true" Precision="12" Scale="2" />
-    <Property Name="Pic" Type="nvarchar" Nullable="false" MaxLength="250" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="IsHot" Type="int" Nullable="false" />
-    <Property Name="IsPromo" Type="int" Nullable="false" />
-    <Property Name="Total" Type="int" Nullable="false" />
-    <Property Name="UpdateDate" Type="datetime" Nullable="true" />
-    <Property Name="CreateDate" Type="datetime" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Suppliers">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="City" Type="nchar" Nullable="true" MaxLength="40" />
-    <Property Name="Area" Type="nchar" Nullable="true" MaxLength="40" />
-    <Property Name="Address" Type="nvarchar" Nullable="true" MaxLength="250" />
-    <Property Name="Phone" Type="nchar" Nullable="true" MaxLength="30" />
-  </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="250" />
-    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="City" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Area" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Address" Type="nvarchar" Nullable="true" MaxLength="250" />
-    <Property Name="UpdateDate" Type="datetime" Nullable="true" />
-    <Property Name="CreateDate" Type="datetime" Nullable="true" />
-  </EntityType>
-  <Association Name="FK_OrderItem_ToOrder">
-    <End Role="Orders" Type="EasyBuyModel.Store.Orders" Multiplicity="1" />
-    <End Role="OrderItems" Type="EasyBuyModel.Store.OrderItems" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Orders">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="OrderItems">
-        <PropertyRef Name="OrderId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_OrderItem_ToProduct">
-    <End Role="Products" Type="EasyBuyModel.Store.Products" Multiplicity="1" />
-    <End Role="OrderItems" Type="EasyBuyModel.Store.OrderItems" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="OrderItems">
-        <PropertyRef Name="ProductId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Order_ToUsers">
-    <End Role="Users" Type="EasyBuyModel.Store.Users" Multiplicity="1" />
-    <End Role="Orders" Type="EasyBuyModel.Store.Orders" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Orders">
-        <PropertyRef Name="CustomerId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Product_ToSupplier">
-    <End Role="Suppliers" Type="EasyBuyModel.Store.Suppliers" Multiplicity="1" />
-    <End Role="Products" Type="EasyBuyModel.Store.Products" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Suppliers">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Products">
-        <PropertyRef Name="SupplierId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="EasyBuyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="OrderItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="OrderId" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductUnitPrice" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="ProductDiscountPrice" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="ProductPic" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="ProductDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'C:\CUST\EASYBUY\EASYBUY\APP_DATA\EASYBUY.MDF.dbo.Orders' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+            
+          </Key>
+          <Property Name="Id" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CustomerId" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TotalAmount" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="Status" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SupplierId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UnitPrice" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="DiscountPrice" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="Pic" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsHot" Type="int" Nullable="false" />
+          <Property Name="IsPromo" Type="int" Nullable="false" />
+          <Property Name="Total" Type="int" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nchar" MaxLength="40" />
+          <Property Name="Area" Type="nchar" MaxLength="40" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'C:\CUST\EASYBUY\EASYBUY\APP_DATA\EASYBUY.MDF.dbo.Users' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+            
+            
+            
+          </Key>
+          <Property Name="Id" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_OrderItem_ToProduct">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ToSupplier">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="SupplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EasyBuyModelStoreContainer">
+          <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Orders].[Id] AS [Id], 
+    [Orders].[CustomerId] AS [CustomerId], 
+    [Orders].[TotalAmount] AS [TotalAmount], 
+    [Orders].[Status] AS [Status], 
+    [Orders].[UpdateDate] AS [UpdateDate], 
+    [Orders].[CreateDate] AS [CreateDate]
+    FROM [dbo].[Orders] AS [Orders]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Users].[Id] AS [Id], 
+    [Users].[Name] AS [Name], 
+    [Users].[Email] AS [Email], 
+    [Users].[Password] AS [Password], 
+    [Users].[City] AS [City], 
+    [Users].[Area] AS [Area], 
+    [Users].[Address] AS [Address], 
+    [Users].[UpdateDate] AS [UpdateDate], 
+    [Users].[CreateDate] AS [CreateDate]
+    FROM [dbo].[Users] AS [Users]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_OrderItem_ToProduct" Association="Self.FK_OrderItem_ToProduct">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ToSupplier" Association="Self.FK_Product_ToSupplier">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EasyBuyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -149,26 +149,29 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="OrderId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
-          <Property Name="UnitPrice" Type="Decimal" Precision="12" Scale="2" />
-          <Property Name="DiscountPrice" Type="Decimal" Precision="12" Scale="2" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Order" Relationship="Self.FK_OrderItem_ToOrder" FromRole="OrderItems" ToRole="Orders" />
           <NavigationProperty Name="Product" Relationship="Self.FK_OrderItem_ToProduct" FromRole="OrderItems" ToRole="Products" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductUnitPrice" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="ProductDiscountPrice" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="ProductPic" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="OrderNumber" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="CustomerId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="TotalAmount" Type="Decimal" Precision="12" Scale="2" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="CreateDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItem_ToOrder" FromRole="Orders" ToRole="OrderItems" />
           <NavigationProperty Name="User" Relationship="Self.FK_Order_ToUsers" FromRole="Orders" ToRole="Users" />
+          <Property Name="Status" Type="Int32" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -296,11 +299,14 @@
     <EntitySetMapping Name="OrderItems">
       <EntityTypeMapping TypeName="IsTypeOf(EasyBuyModel.OrderItem)">
         <MappingFragment StoreEntitySet="OrderItems">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="ProductPic" ColumnName="ProductPic" />
+                <ScalarProperty Name="ProductDiscountPrice" ColumnName="ProductDiscountPrice" />
+                <ScalarProperty Name="ProductUnitPrice" ColumnName="ProductUnitPrice" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="DiscountPrice" ColumnName="DiscountPrice" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -308,8 +314,8 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="IsTypeOf(EasyBuyModel.Order)">
         <MappingFragment StoreEntitySet="Orders">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
           <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
           <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />

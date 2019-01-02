@@ -202,6 +202,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InpageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -424,12 +426,16 @@
     <Content Include="images\黑米火龍果皂.jpg" />
     <Content Include="images\黑米釋迦皂.jpg" />
     <Content Include="js\common.js" />
+    <Content Include="js\fun.js" />
     <Content Include="js\global.js" />
+    <Content Include="js\inpage.js" />
     <Content Include="js\lib\swiper.min.js" />
     <Content Include="js\lib\vue-awesome-swiper.js" />
     <Content Include="js\lib\vue-http-loader.js" />
     <Content Include="js\lib\vue.js" />
     <Content Include="js\lib\vue.min.js" />
+    <Content Include="js\product.js" />
+    <Content Include="js\supplier.js" />
     <Content Include="Models\EasyBuy.Context.tt">
       <DependentUpon>EasyBuy.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -524,6 +530,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Inpage\Index.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Supplier\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

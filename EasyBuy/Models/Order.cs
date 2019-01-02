@@ -20,12 +20,12 @@ namespace EasyBuy.Models
             this.OrderItems = new HashSet<OrderItem>();
         }
     
-        public int Id { get; set; }
-        public int OrderNumber { get; set; }
+        public string Id { get; set; }
         public string CustomerId { get; set; }
         public Nullable<decimal> TotalAmount { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
+        public Nullable<int> Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItem> OrderItems { get; set; }

@@ -1,0 +1,10 @@
+﻿@*model EasyBuy.Models.Product*@
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>建立產品</h2>
+@Html.AntiForgeryToken()
+<div class="product-create"></div>
+@Scripts.Render("~/bundles/product")

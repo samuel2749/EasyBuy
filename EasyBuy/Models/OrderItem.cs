@@ -15,10 +15,13 @@ namespace EasyBuy.Models
     public partial class OrderItem
     {
         public int Id { get; set; }
-        public int OrderId { get; set; }
+        public string OrderId { get; set; }
         public int ProductId { get; set; }
-        public Nullable<decimal> UnitPrice { get; set; }
-        public Nullable<decimal> DiscountPrice { get; set; }
+        public string ProductName { get; set; }
+        public decimal ProductUnitPrice { get; set; }
+        public Nullable<decimal> ProductDiscountPrice { get; set; }
+        public string ProductPic { get; set; }
+        public string ProductDescription { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
     
         public virtual Order Order { get; set; }

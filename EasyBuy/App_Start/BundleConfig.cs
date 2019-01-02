@@ -22,7 +22,14 @@ namespace EasyBuy
                         "~/js/lib/vue-http-loader.js",
                         "~/Scripts/jquery-{version}.js",
                         "~/js/common.js",
-                        "~/js/global.js"));
+                        "~/js/global.js",
+                        "~/js/fun.js"));
+            bundles.Add(new ScriptBundle("~/bundles/supplier").Include(
+                        "~/js/supplier.js"));
+            bundles.Add(new ScriptBundle("~/bundles/product").Include(
+                        "~/js/product.js"));
+            bundles.Add(new ScriptBundle("~/bundles/inpage").Include(
+                        "~/js/inpage.js"));
             #endregion
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
