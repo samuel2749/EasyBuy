@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/27/2018 23:32:19
+-- Date Created: 01/07/2019 23:32:44
 -- Generated from EDMX file: C:\CUST\EasyBuy\EasyBuy\Models\EasyBuy.edmx
 -- --------------------------------------------------
 
@@ -22,6 +22,9 @@ IF OBJECT_ID(N'[dbo].[FK_OrderItem_ToOrder]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_OrderItem_ToProduct]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[OrderItems] DROP CONSTRAINT [FK_OrderItem_ToProduct];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Orders_ToUsers]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Orders] DROP CONSTRAINT [FK_Orders_ToUsers];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Product_ToSupplier]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Products] DROP CONSTRAINT [FK_Product_ToSupplier];
@@ -43,8 +46,8 @@ GO
 IF OBJECT_ID(N'[dbo].[Suppliers]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Suppliers];
 GO
-IF OBJECT_ID(N'[EasyBuyModelStoreContainer].[Users]', 'U') IS NOT NULL
-    DROP TABLE [EasyBuyModelStoreContainer].[Users];
+IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Users];
 GO
 
 -- --------------------------------------------------
@@ -54,7 +57,7 @@ GO
 -- Creating table 'OrderItems'
 CREATE TABLE [dbo].[OrderItems] (
     [Id] int  NOT NULL,
-    [OrderId] nvarchar(max)  NOT NULL,
+    [OrderId] nvarchar(100)  NOT NULL,
     [ProductId] int  NOT NULL,
     [ProductName] nvarchar(50)  NOT NULL,
     [ProductUnitPrice] decimal(12,2)  NOT NULL,
@@ -67,12 +70,12 @@ GO
 
 -- Creating table 'Orders'
 CREATE TABLE [dbo].[Orders] (
-    [Id] nvarchar(max)  NOT NULL,
-    [CustomerId] nvarchar(max)  NOT NULL,
+    [Id] nvarchar(100)  NOT NULL,
+    [CustomerId] nvarchar(100)  NOT NULL,
     [TotalAmount] decimal(12,2)  NULL,
-    [Status] int  NULL,
     [UpdateDate] datetime  NULL,
-    [CreateDate] datetime  NULL
+    [CreateDate] datetime  NULL,
+    [Status] int  NULL
 );
 GO
 
@@ -106,7 +109,7 @@ GO
 
 -- Creating table 'Users'
 CREATE TABLE [dbo].[Users] (
-    [Id] nvarchar(max)  NOT NULL,
+    [Id] nvarchar(100)  NOT NULL,
     [Name] nvarchar(50)  NOT NULL,
     [Email] nvarchar(250)  NOT NULL,
     [Password] nvarchar(max)  NOT NULL,
