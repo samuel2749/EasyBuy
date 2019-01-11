@@ -1,0 +1,49 @@
+﻿.form {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.form p.title {
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.form .row {
+  position: relative;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.form .row label {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.form .row .input_box {
+  width: 70%;
+  display: inline-block;
+}
+
+.form .row .input_box input {
+  width: 100%;
+}
+
+.form .row .input_box .zipcode {
+  display: none;
+}
+
+.form .row .input_box .city {
+  width: 50% !important;
+}
+
+.form .row .input_box .area {
+  width: 50% !important;
+}
+
+.form .row .btn {
+  width: 100px;
+}

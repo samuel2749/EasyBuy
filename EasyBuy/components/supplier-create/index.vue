@@ -1,10 +1,33 @@
 ﻿<template>
-  <div class="product-list">
-    <div class="content" v-if="products.length > 0">
-      <product-item v-for="(item, index) in products" :item="item" :key="index"></product-item>
+  <div class="form">
+    <p class="title">新增廠商</p>
+    <div class="row">
+      <label>名稱：</label>
+      <div class="input_box">
+        <input type="text" v-model="name">
+      </div>
     </div>
-    <div class="pager">
-
+    <div class="row">
+      <label>電話：</label>
+      <div class="input_box">
+        <input type="text" v-model="phone" maxlength="10">
+      </div>
+    </div>
+    <div class="row">
+      <label>地址：</label>
+      <div class="input_box">
+        <twzipcode
+          :class-names="{county: 'city', district: 'area', zipcode: 'zipcode'}"
+          default-county="桃園市"
+          default-district="中壢區"
+          ref=twzipcode
+        >
+        </twzipcode>
+        <input type="text" v-model="address">
+      </div>
+    </div>
+    <div class="row">
+      <a href="#" class="btn" @click.prevent.stop="onSend">新增</a>
     </div>
   </div>
 </template>
@@ -19,22 +42,27 @@ module.exports = {
   },
   data: function() {
     return {
-      products: [],
-      who: "world"
+      name: "",
+      phone: "",
+      address: ""
     };
   },
   mounted() {
-    this.getData();
   },
   components: {
-    'twzipcode': http,
+    'twzipcode': window.Twzipcode$1
   },
   computed: {
   },
   methods:{
-    getData(){
-      this.products = [...this.getTempData()];
-      console.log(this.products);
+    onSend(){
+      let sendObj = {Name: this.name, Phone: this.phone, Address: this.address};
+      const {county, district, zipcode} = this.$refs.twzipcode;
+      sendObj.City = county;
+      sendObj.Area = district;
+      $.post("/Supplier/Create", sendObj, function(data){
+        console.log(data);
+      }, "json");
     }
   }
 };

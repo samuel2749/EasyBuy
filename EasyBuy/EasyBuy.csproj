@@ -235,9 +235,11 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>EasyBuy.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResponseModels.cs" />
     <Compile Include="Models\Supplier.cs">
       <DependentUpon>EasyBuy.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SupplierViewModels.cs" />
     <Compile Include="Models\User.cs">
       <DependentUpon>EasyBuy.tt</DependentUpon>
     </Compile>
@@ -247,6 +249,9 @@
   <ItemGroup>
     <Content Include="components\product-list\product-list.css">
       <DependentUpon>product-list.scss</DependentUpon>
+    </Content>
+    <Content Include="components\supplier-create\supplier-create.css">
+      <DependentUpon>supplier-create.scss</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -432,6 +437,7 @@
     <Content Include="js\lib\swiper.min.js" />
     <Content Include="js\lib\vue-awesome-swiper.js" />
     <Content Include="js\lib\vue-http-loader.js" />
+    <Content Include="js\lib\vue-twzipcode.min.js" />
     <Content Include="js\lib\vue.js" />
     <Content Include="js\lib\vue.min.js" />
     <Content Include="js\product.js" />
@@ -483,6 +489,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="components\cart\cart.scss" />
+    <Content Include="components\product-create\index.vue" />
+    <Content Include="components\product-create\product.-creates.scss" />
+    <Content Include="components\supplier-create\index.vue" />
+    <Content Include="components\supplier-create\supplier-create.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

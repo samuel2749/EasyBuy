@@ -1,70 +1,115 @@
 ﻿body {
-  background: #ececec; }
+  background: #ececec;
+}
 
 header .logo {
   width: 15.625vw;
-  z-index: 10; }
-  header .logo img {
-    width: 100%; }
+  z-index: 10;
+}
+
+header .logo img {
+  width: 100%;
+}
 
 header h1 {
   position: absolute;
   font-size: 1.875vw;
   width: 100%;
   top: 3.64583vw;
-  text-align: center; }
+  text-align: center;
+}
 
 header .menu_box {
   width: 100%;
   text-align: center;
   background: #000;
-  margin-bottom: 20px; }
-  header .menu_box a {
-    text-decoration: none;
-    font-size: 22px; }
-  header .menu_box ul {
-    display: inline-block; }
-    header .menu_box ul.menu li {
-      float: left;
-      list-style: none;
-      font-size: 0.83333vw;
-      display: inline-block;
-      color: #fff;
-      padding: 5px 20px;
-      letter-spacing: 3px;
-      margin: 0 5px; }
-      header .menu_box ul.menu li a {
-        color: #fff; }
-    header .menu_box ul.admin {
-      position: absolute;
-      top: 20px;
-      right: 50px; }
-      header .menu_box ul.admin li {
-        float: left;
-        font-size: 16px; }
-        header .menu_box ul.admin li:nth-child(n+1) {
-          margin-right: 10px; }
-        header .menu_box ul.admin li a {
-          color: #000;
-          font-size: inherit; }
-  header .menu_box::after {
-    content: "";
-    display: block;
-    clear: both; }
+  margin-bottom: 20px;
+}
+
+header .menu_box a {
+  text-decoration: none;
+  font-size: 22px;
+}
+
+header .menu_box ul {
+  display: inline-block;
+}
+
+header .menu_box ul.menu li {
+  float: left;
+  list-style: none;
+  font-size: 0.83333vw;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 20px;
+  letter-spacing: 3px;
+  margin: 0 5px;
+}
+
+header .menu_box ul.menu li a {
+  color: #fff;
+}
+
+header .menu_box ul.admin {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+
+header .menu_box ul.admin li {
+  float: left;
+  font-size: 16px;
+}
+
+header .menu_box ul.admin li:nth-child(n+1) {
+  margin-right: 10px;
+}
+
+header .menu_box ul.admin li a {
+  color: #000;
+  font-size: inherit;
+}
+
+header .menu_box::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
 footer {
   padding: 15px 0;
   margin: 15px 0;
   text-align: center;
-  border-top: solid 5px; }
-  footer ul {
-    padding-bottom: 20px;
-    display: inline-block; }
-    footer ul li {
-      float: left; }
-      footer ul li:nth-child(n+1) {
-        margin-right: 10px; }
-      footer ul li a {
-        text-decoration: none;
-        color: #000;
-        font-size: 18px; }
+  border-top: solid 5px;
+}
+
+footer ul {
+  padding-bottom: 20px;
+  display: inline-block;
+}
+
+footer ul li {
+  float: left;
+}
+
+footer ul li:nth-child(n+1) {
+  margin-right: 10px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid;
+  background: black;
+  display: inline-block;
+  padding: 5px;
+  letter-spacing: 5px;
+  text-align: center;
+  position: relative;
+}

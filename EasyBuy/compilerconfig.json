@@ -22,5 +22,9 @@
   {
     "outputFile": "components/product-list/product-list.css",
     "inputFile": "components/product-list/product-list.scss"
+  },
+  {
+    "outputFile": "components/supplier-create/supplier-create.css",
+    "inputFile": "components/supplier-create/supplier-create.scss"
   }
 ]

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyBuy.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -28,18 +29,38 @@ namespace EasyBuy.Controllers
 
         // POST: Supplier/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(SupplierViewModels model)
         {
+            var data = new ResponseModels();
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                EasyBuyEntities db = new EasyBuyEntities();
+                var checkSupplier = db.Suppliers.Where(p => p.Name == model.Name).FirstOrDefault();
+                if (checkSupplier == null)
+                {
+                    Models.Supplier supplier = new Models.Supplier
+                    {
+                        Name = model.Name,
+                        Phone = model.Phone,
+                        City = model.City,
+                        Area = model.Area,
+                        Address = model.Address
+                    };
+                    db.Suppliers.Add(supplier);
+                    db.SaveChanges();
+                    data.result = 1;
+                }
+                else
+                {
+                    data.msg = "該廠商已存在，請重新建立。";
+                }
             }
-            catch
+            catch(Exception e)
             {
-                return View();
+                data.msg = e.Message;
             }
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Supplier/Edit/5

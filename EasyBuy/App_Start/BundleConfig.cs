@@ -21,6 +21,7 @@ namespace EasyBuy
                         "~/js/lib/vue.js",
                         "~/js/lib/vue-http-loader.js",
                         "~/Scripts/jquery-{version}.js",
+                        "~/js/lib/vue-twzipcode.min.js",
                         "~/js/common.js",
                         "~/js/global.js",
                         "~/js/fun.js"));

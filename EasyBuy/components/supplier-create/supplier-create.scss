@@ -1,2 +1,40 @@
-﻿body {
+﻿.form{
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  p.title{
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .row{
+    position: relative;
+    margin-bottom: 5px;
+    text-align: center;
+    label{
+      width: 20%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .input_box{
+      width: 70%;
+      display: inline-block;
+      input{
+        width: 100%;
+      }
+      .zipcode{
+        display: none;
+      }
+      .city{
+        width: 50% !important;
+      }
+      .area{
+        width: 50% !important;
+      }
+    }
+    .btn{
+      width: 100px;
+    }
+  }
 }
